@@ -13,8 +13,14 @@ export default function Home() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    let name = query?.to?.replace("_", " ") || "";
+    let name =
+      query?.to?.replace("_", " ") || localStorage.getItem("name") || "";
     setName(name);
+
+    if (name.trim().length) {
+      localStorage.setItem("name", name);
+    }
+
     let wish = newYear23(name);
     setMessage(wish);
   }, [query]);
