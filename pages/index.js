@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { newYear23 } from "../messages";
@@ -19,18 +20,25 @@ export default function Home() {
   }, [query]);
 
   return (
-    <div className={classes.root}>
-      <img
-        className={classes.wishBG}
-        alt=""
-        src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL}/${newYearBG()}`}
-      />
-      <div className={classes.bottomScreen} />
+    <>
+      <Head>
+        <title>A message for you. {name}</title>
+        <meta property="og:title" content={`A message for you. ${name}`} />
+        <meta name="description" content={`A message for you. ${name}`} />
+      </Head>
+      <div className={classes.root}>
+        <img
+          className={classes.wishBG}
+          alt=""
+          src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL}/${newYearBG()}`}
+        />
+        <div className={classes.bottomScreen} />
 
-      <div className={classes.messageBox}>
-        <div className={classes.wish}>{events(name).newYear}</div>
-        <div className={classes.message}>{message}</div>
+        <div className={classes.messageBox}>
+          <div className={classes.wish}>{events(name).newYear}</div>
+          <div className={classes.message}>{message}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
