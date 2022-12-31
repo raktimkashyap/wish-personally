@@ -42,6 +42,7 @@ export default function Home() {
         <div className={classes.messageBox}>
           <div className={classes.wish}>{events(name).newYear}</div>
           <div className={classes.message}>{message}</div>
+          <hr className={classes.underline} />
         </div>
       </div>
     </>

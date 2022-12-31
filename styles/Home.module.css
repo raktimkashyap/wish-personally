@@ -47,6 +47,17 @@
   z-index: 1;
 }
 
+.underline {
+  width: 20%;
+  margin: 15px auto;
+  border: 1px solid #ffffff60;
+}
+
+.sender {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
 @keyframes reveal {
   0% {
     bottom: -250px;
