@@ -25,11 +25,11 @@ export default function Home() {
         alt=""
         src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL}/${newYearBG()}`}
       />
-      <div className={classes.messageBoxRoot}>
-        <div className={classes.messageBox}>
-          <div className={classes.wish}>{events(name).newYear}</div>
-          <div className={classes.message}>{message}</div>
-        </div>
+      <div className={classes.bottomScreen} />
+
+      <div className={classes.messageBox}>
+        <div className={classes.wish}>{events(name).newYear}</div>
+        <div className={classes.message}>{message}</div>
       </div>
     </div>
   );
