@@ -24,7 +24,6 @@ export default function Home() {
       <Head>
         <title>A message for you. {name}</title>
         <meta property="og:title" content={`A message for you. ${name}`} />
-        <meta name="description" content={`A message for you. ${name}`} />
       </Head>
       <div className={classes.root}>
         <img
