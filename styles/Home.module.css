@@ -9,7 +9,7 @@
 
 .messageBox {
   position: absolute;
-  bottom: 0;
+  bottom: -150px;
   left: 0;
   padding: 30px 30px;
   width: 100%;
@@ -17,11 +17,12 @@
   box-shadow: 0px -2px 16px #00000020;
   z-index: 2;
   background-color: white;
+  animation: reveal 2s ease-out forwards;
 }
 
 .wish {
   font-weight: 700;
-  font-size: 22px;
+  font-size: 26px;
   margin-bottom: 10px;
 }
 
@@ -37,4 +38,14 @@
   height: auto;
   width: 100%;
   z-index: 1;
+}
+
+@keyframes reveal {
+  0% {
+    bottom: -150px;
+  }
+
+  100% {
+    bottom: 0px;
+  }
 }

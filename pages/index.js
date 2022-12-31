@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { newYear23 } from "../messages";
 import { events } from "../messages/events";
+import { newYearBG } from "../messages/images";
 import classes from "../styles/Home.module.css";
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
       <img
         className={classes.wishBG}
         alt=""
-        src="https://res.cloudinary.com/cloud-rkd/image/upload/v1672486628/wishes/Gold_And_Green_Modern_Happy_New_Year_Your_Story_nodwux.gif"
+        src={`${process.env.NEXT_PUBLIC_CLOUDINARY_URL}/${newYearBG()}`}
       />
       <div className={classes.messageBox}>
         <div className={classes.wish}>{events(name).newYear}</div>
